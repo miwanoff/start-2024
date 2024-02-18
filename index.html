@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>HTML+CSS+JavaScript</title>
+    <style>
+      table {
+        max-width: 1024px;
+        margin: 20px auto;
+        text-align: center;
+      }
+
+      p,
+      h1,
+      h2,
+      h3 {
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        padding: 10px;
+      }
+      h2 {
+        color: white;
+        background: #1e417c;
+        padding: 20px;
+      }
+      h3 {
+        color: #1e417c;
+      }
+      p {
+        font-size: 18px;
+      }
+      div {
+        max-width: 1024px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      #time {
+        font-size: 32px;
+        padding: 20px;
+        margin: 10px auto;
+        width: 200px;
+      }
+
+      #time p {
+        margin: 5px;
+        color: white;
+        background: orange;
+        padding: 2px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>HTML+CSS+JavaScript</h2>
+
+    <img src="images/web22.png" alt="" style="width: 100%" />
+    <p>
+      <a
+        href="https://ru.wikipedia.org/wiki/%D0%92%D1%81%D0%B5%D0%BC%D0%B8%D1%80%D0%BD%D0%B0%D1%8F_%D0%BF%D0%B0%D1%83%D1%82%D0%B8%D0%BD%D0%B0"
+        >Всемирная паутина (World Wide Web, WWW)</a
+      >
+      — <br />
+      сеть, состоящая из связанных между собой документов и других веб-ресурсов,
+      расположенных на различных компьютерах и доступных через Интернет.
+    </p>
+
+    <h3>HTML, CSS и JavaScript - три основные технологии World Wide Web.</h3>
+    <table>
+      <tr>
+        <td>
+          <img src="images/html5.png" alt="" />
+          <p>
+            <a href="http://">HTML (HyperText Markup Language)</a> — язык
+            гипертекстовой разметки документов во Всемирной паутине. Большинство
+            веб-страниц создаются при помощи языка HTML.
+          </p>
+        </td>
+        <td>
+          <img src="images/css3.png" alt="" />
+          <p>
+            <a href="http://">CSS (Cascading Style Sheets)</a> — каскадные
+            таблицы стилей. Формальный язык описания внешнего вида документа.
+            Отвечает за то, как страницы выглядят.
+          </p>
+        </td>
+        <td>
+          <img src="images/js.png" alt="" />
+          <p>
+            <a href="http://">JavaScript (JS)</a> - высокоуровневый,
+            интерпретируемый язык программирования. Делает сайты динамичными и
+            интерактивными.
+          </p>
+        </td>
+      </tr>
+    </table>
+
+    <div>
+      <h3>Самая распростаненная CMS в мире - WordPress</h3>
+      <img src="images/wp.png" alt="" />
+      <p>
+        <a href="http://">WordPress (content management system, CMS)</a> —
+        <br />
+        система управления содержимым сайта, с помошью которой можно создавать
+        любые сайты - от простых блогов до сложных новостных порталов и
+        интернет-магазинов.
+      </p>
+      <p>
+        Самая распростаненная CMS в мире, более трети всех сайтов WWW сделана на
+        ней.
+      </p>
+      <input type="button" value="Угадай число" onclick="go()" />
+    </div>
+
+    <h3>До начала учебного года осталось:</h3>
+    <div id="time"></div>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2564.2416442488006!2d36.23468221571537!3d50.006825879416546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4127a0e6dffdbb8b%3A0xf209264ca6ae97a1!2z0YPQuy4g0KHRg9C80YHQutCw0Y8sIDQ3LCDQpdCw0YDRjNC60L7Qsiwg0KXQsNGA0YzQutC-0LLRgdC60LDRjyDQvtCx0LvQsNGB0YLRjCwgNjEwMDA!5e0!3m2!1sru!2sua!4v1543572867780"
+      width="100%"
+      height="450"
+      frameborder="0"
+      style="border: 0"
+      allowfullscreen
+    ></iframe>
+    <h2>&copy;"Кит" 2021</h2>
+    <script>
+      // Установить дату в будущем
+      // var date_in_future = new Date(2022,0,01);
+      // Установить дату и время в будущем
+      var date_in_future = new Date(2023, 8, 1, 12, 20); // 1.09.2021
+      var x;
+      window.onload = function timer() {
+        // Установить дату и время текущего момента
+        var date = new Date().getTime();
+
+        // Разница в милисекундах между текущей и будущей датой
+        var ms = date_in_future - date;
+
+        // Подсчет разницы времени в днях, часах, минутах и секундах
+        var days = Math.floor(ms / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((ms % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((ms % (1000 * 60)) / 1000);
+
+        // Показать результат в теге с id="time"
+        document.getElementById("time").innerHTML =
+          "<p>Дней: " +
+          days +
+          "</p><p>Часов: " +
+          hours +
+          "</p><p>Минут: " +
+          minutes +
+          "</p><p>Секунд: " +
+          seconds +
+          "</p>";
+
+        // Если время истекло, показать сообщение
+        if (ms < 0) {
+          clearInterval(x);
+          document.getElementById("time").innerHTML = "Время истекло!";
+        }
+        x = setInterval(timer, 1000);
+      };
+
+      function getRandomInt(n) {
+        return Math.floor(Math.random() * n);
+      }
+
+      function go() {
+        var x = getRandomInt(10);
+        console.log(x);
+
+        while (true) {
+          var n = prompt("Угадай число от 1 до 10");
+          if (isNaN(n)) {
+            alert("Ошибка ввода!");
+            break;
+          } else if (n < 8) {
+            alert("Слишком мало");
+          } else if (n > 8) {
+            alert("Слишком много");
+          } else {
+            alert("Угадал");
+            break;
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
